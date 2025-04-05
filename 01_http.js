@@ -4,7 +4,7 @@ const server = http.createServer((req, res) => {
   if (req.url === "/") {
     const date = new Date();
     res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end(date.toISOString());
+    res.end(JSON.stringify({ date: date.toISOString() }));
   } else if (req.url === "/hello") {
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Hello World!");
